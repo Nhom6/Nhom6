@@ -1,0 +1,13 @@
+E:\UNIVERSITY\HK1-5\Dich Vu Web\sample_demo\MobileStoreService\winfromsHost\bin\Debug\winfromsHost.exe.config
+E:\UNIVERSITY\HK1-5\Dich Vu Web\sample_demo\MobileStoreService\winfromsHost\bin\Debug\winfromsHost.exe
+E:\UNIVERSITY\HK1-5\Dich Vu Web\sample_demo\MobileStoreService\winfromsHost\bin\Debug\winfromsHost.pdb
+E:\UNIVERSITY\HK1-5\Dich Vu Web\sample_demo\MobileStoreService\winfromsHost\bin\Debug\MobileStoreService.dll
+E:\UNIVERSITY\HK1-5\Dich Vu Web\sample_demo\MobileStoreService\winfromsHost\bin\Debug\EntityFramework.dll
+E:\UNIVERSITY\HK1-5\Dich Vu Web\sample_demo\MobileStoreService\winfromsHost\bin\Debug\MobileStoreService.pdb
+E:\UNIVERSITY\HK1-5\Dich Vu Web\sample_demo\MobileStoreService\winfromsHost\bin\Debug\EntityFramework.xml
+E:\UNIVERSITY\HK1-5\Dich Vu Web\sample_demo\MobileStoreService\winfromsHost\obj\Debug\winfromsHost.csprojResolveAssemblyReference.cache
+E:\UNIVERSITY\HK1-5\Dich Vu Web\sample_demo\MobileStoreService\winfromsHost\obj\Debug\winfromsHost.Host_Form.resources
+E:\UNIVERSITY\HK1-5\Dich Vu Web\sample_demo\MobileStoreService\winfromsHost\obj\Debug\winfromsHost.Properties.Resources.resources
+E:\UNIVERSITY\HK1-5\Dich Vu Web\sample_demo\MobileStoreService\winfromsHost\obj\Debug\winfromsHost.csproj.GenerateResource.Cache
+E:\UNIVERSITY\HK1-5\Dich Vu Web\sample_demo\MobileStoreService\winfromsHost\obj\Debug\winfromsHost.exe
+E:\UNIVERSITY\HK1-5\Dich Vu Web\sample_demo\MobileStoreService\winfromsHost\obj\Debug\winfromsHost.pdb

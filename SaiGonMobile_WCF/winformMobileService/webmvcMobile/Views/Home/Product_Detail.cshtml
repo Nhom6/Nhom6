@@ -1,0 +1,26 @@
+﻿@model IEnumerable< webmvcMobile.MobileServiceReference.Product>
+
+@{
+    ViewBag.Title = "Product_Detail";
+    Layout = "~/Views/Shared/LayoutPage.cshtml";
+}
+@{
+    foreach (var prodt in Model)
+    {
+        <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <img src="@prodt.ImageUrl" alt="">
+                <div class="caption">
+                    <h4 class="pull-right">@prodt.UnitPrice VND</h4>
+                    <h4>
+                        <a href="#">@prodt.ProductName</a>
+                    </h4>
+                    <text> @prodt.Description</text>
+                </div>
+                <div class="ratings">
+                    <p class="pull-right"><a href="@Url.Action("AddToCart", "Cart", new { ProductID = prodt.ID })"> Add to cart</a></p>
+                </div>
+            </div>
+        </div>
+    }
+}

@@ -1,0 +1,62 @@
+﻿
+@model webmvcMobile.Models.Cart
+@{
+    ViewBag.Title = "MyCart";
+    Layout = "~/Views/Shared/LayoutPage.cshtml";
+}
+<h2>Giỏ hàng</h2>
+
+    <script type="text/javascript">
+    function Delete() {
+        return confirm("are you sure?");
+    }
+    </script>
+
+    <table border="1">
+        <tr>
+            <td style="width:100px; height: 100px">Tên sản phẩm</td>
+            <td style="width:100px; height: 100px">Số lượng</td>
+            <td style="width:100px; height: 100px">Đơn giá</td>
+            <td style="width:100px; height: 100px">Hình ảnh</td>
+            <td style="width:100px; height: 100px">Thành tiền</td>
+            <td style="width:100px; height: 100px">Xoá </td>
+            <td style="width:100px; height: 100px">Cập nhật</td>
+        </tr>
+        @{
+            foreach (var c in Model.ListItems)
+            {
+
+                <tr>
+                    <td>@c.ProductName</td>
+                    <td style="text-align:center">
+                        @using (Html.BeginForm("UpdateQuantityForProduct", "Cart", new { productID = @c.ProductID }))
+                        {
+                            <input name="quantity" type="text" value="@c.Quantity" style="width:100px; text-align:center" />
+                            <input type="submit" value="Cập nhật" />
+                        }
+                    </td>
+                    <td>@String.Format("{0:0,0 VNĐ}", c.UnitPrice)</td>
+                    <td><img src="~/Content/Images/@c.ImageUrl" style="width:100px; height: 100px" /></td>
+                    <td>@String.Format("{0:0,0 VNĐ}", Convert.ToDouble(c.Quantity * c.UnitPrice))</td>
+                    <td>
+                        <a href="/cart/DeleteItemInCart/?productID=@c.ProductID" onclick="return Delete();">Xoá</a>
+                    <td></td>
+                </tr>
+            }
+        }
+    </table>
+    <table>
+        <tr>
+            <td> Tổng tiền :</td>
+            <td>@String.Format("{0:0,0 VNĐ}",Model.TotalPrice())</td>
+            <td><a href="~/home"><<<< Quay về trang sản phẩm<<<< </a></td>
+            <td>
+                <a href="~/Order/CheckOut?TotalPrice=@Model.TotalPrice()">>>>>Thanh toán >>></a>
+            </td>
+            <td>
+                <a href="#">>>>>Huỷ đơn hàng>>></a>
+            </td>
+        </tr>
+    </table>
+
+

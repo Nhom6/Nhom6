@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="94a6f832f9e642dbb9f706887c95d60e" Name="Diagram1">
+        <EntityTypeShape EntityType="MobileDBModel.Account" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="MobileDBModel.Category" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MobileDBModel.Order" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MobileDBModel.OrderDetail" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MobileDBModel.Product" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MobileDBModel.StorageShop" Width="1.5" PointX="5.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MobileDBModel.UserType" Width="1.5" PointX="1.5" PointY="11.625" IsExpanded="true" />
+        <AssociationConnector Association="MobileDBModel.FK_Account_UserType" ManuallyRouted="false" />
+        <AssociationConnector Association="MobileDBModel.FK_Order_Account" ManuallyRouted="false" />
+        <AssociationConnector Association="MobileDBModel.FK_Products_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="MobileDBModel.FK_OrderDetail_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="MobileDBModel.FK_OrderDetail_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="MobileDBModel.FK_StorageShop_Products" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

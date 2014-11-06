@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        <title>@ViewBag.Title - Sài Gòn Mobile</title>
+        <!-- Bootstrap Core CSS -->
+        @System.Web.Optimization.Styles.Render("~/Content/bootstrap.min.css")
+        <!-- Custom CSS -->
+        @System.Web.Optimization.Styles.Render("~/Content/shop-homepage.css")
+        <!-- Custom CSS -->
+        @System.Web.Optimization.Styles.Render("~/Content/bootstrap.css")
+        @*Metro UI Category*@
+        @System.Web.Optimization.Styles.Render("~/Content/style.css")
+        @*Jquery shopping cart*@
+        @System.Web.Optimization.Scripts.Render("~/Content/js/jquery.min.js")
+        @System.Web.Optimization.Scripts.Render("~/Content/js/jquery_easing.js")
+    </head>
+    <body>
+        <header>
+            <!-- Header Navigation -->
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="~/Home">SÀI GÒN MOBILE</a>
+                    </div>
+                    @*form seach product*@
+                    @*@{Html.RenderAction("SearchPartial","Home");}*@
+                    <div class="col-lg-4">
+                        <div class="input-group">
+                            @*<form action="/Home/SearchBasic" method="post">*@
+                                <input type="text" name="txtSearch" class="form-control" placeholder="Search" id="search-query-3">
+                                <span class="input-group-btn">
+                                     <button type="submit" class="btn"><span class="fui-search"></span></button>
+                                    @*<input type="image" src="~/Content/Images/iconsearch.jpg" width="40" height="40" />*@
+                                </span>
+                             @*</form>*@
+                        </div>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#">CỬA HÀNG</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">ĐĂNG NHẬP<span class="caret"></span></a>
+                                <ul class="dropdown-menu " role="menu" style="list-style: none">
+                                    <li>
+                                        @{ if (Session["User"] == null && ViewBag.IsLogin == null)
+                                         {
+                                            <form action="/Account/Login" method="post">
+                                                <ul>
+                                                    <li >ID :<input type="text" name="account" style="color:red" /></li>
+                                                    <li>Pass:<input type="password" name="Password" style="color:red" /></li>
+                                                    @*<li><input type="submit" value="Login" /><input type="button" value="Register" /></li>*@
+                                                    <li><button type="submit" class="btn btn-default" value="Login">Login</button>
+                                                        <button type="submit" class="btn btn-default" value="Register">Register</button></li>
+                                                   
+                                                </ul>
+                                            </form>
+                                         }
+                                         else if (Session["User"] == null && ViewBag.IsLogin == "Fasle")
+                                         {
+                                            <input type="text" value="ID or Password incorrect!" />
+                                         }
+                                         else
+                                         {
+                                            <button class="btn btn-hg btn-primary">Chào @Session["User"]   </button>
+                                            <a href="@Url.Action("Logout", "Account" )" style="float:right"><img src="~/Content/Images/Logout.jpg" width="80" height="40" /></a>
+                                         }
+                                        }
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container -->
+            </nav>
+        </header>
+        <div id="body">
+            <div class="container">
+                <div class="row">
+                    @*<%--Menu--%>*@
+                    <div class="col-md-2">
+                       @{Html.RenderAction("Category","Home");}
+                    </div>
+                    <div class="col-md-2">
+                        @{Html.RenderAction("Category1", "Home");}
+                    </div>
+                    @*<%--Slide Jquery--%>*@
+                    <div class="col-md-6">
+                        <div class="row carousel-holder">
+                            <div class="col-md-11">
+                                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                                    </ol>
+                                    <div class="carousel-inner">
+                                        <div class="item active">
+                                            <img class="slide-image" src="~/Content/Images/Banner.jpg" alt="">
+                                        </div>
+                                        <div class="item">
+                                            <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                        </div>
+                                        <div class="item">
+                                            <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                        </div>
+                                    </div>
+                                    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                                        <span class="glyphicon glyphicon-chevron-left"></span>
+                                    </a>
+                                    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @*<%--Cart--%>*@
+                    <div class="col-md-1">
+                        @Html.ActionLink("Cart", "MyCart", new { controller = "Cart" }, new { @class = "classcart" })
+                    </div>
+                </div>
+                @*<%--Show product--%>*@
+                @RenderBody()
+            </div>
+        </div>
+        <footer>
+            <div class="footercustom">
+                <div class="container ">
+                    <div class="row ">
+                        @*<div class="col-lg-12">
+                            
+                        </div>*@
+                        <div class="col-sm-4 col-lg-4 col-md-4">
+                            <h4>
+                                <a href="#" class="footercustom-title">Copyright &copy; SÀI GÒN MOBILE</a>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        @System.Web.Optimization.Scripts.Render("~/Content/js/jquery-1.11.0.js")
+        @System.Web.Optimization.Scripts.Render("~/Content/js/bootstrap.min.js")
+    </body>
+</html>

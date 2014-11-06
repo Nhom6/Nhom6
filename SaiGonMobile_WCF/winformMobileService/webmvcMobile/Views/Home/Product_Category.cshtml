@@ -1,0 +1,41 @@
+﻿@model PagedList.IPagedList<webmvcMobile.MobileServiceReference.Product>
+
+@{
+    ViewBag.Title = "Product_Category";
+    Layout = "~/Views/Shared/LayoutPage.cshtml";
+}
+@using PagedList
+@using PagedList.Mvc
+<div class="row">
+    <div class="col-md-10">
+        <div class="row">
+            @{
+                foreach (var pro in Model)
+                {
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="@pro.ImageUrl" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">@pro.UnitPrice VND</h4>
+                                <h4>
+                                    <a href="#">@pro.ProductName</a>
+                                </h4>
+                                <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+                                <p>
+                                    <a href="@Url.Action("Product_Detail","Home",new {id = pro.ID})"> Detail</a>
+                                </p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">15 reviews</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+        <div>
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }), PagedListRenderOptions.OnlyShowFivePagesAtATime);
+        </div>
+    </div>
+</div>

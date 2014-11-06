@@ -1,0 +1,29 @@
+﻿@model webmvcMobile.MobileServiceReference.Account
+@{
+    ViewBag.Title = "CheckOut";
+    Layout = "~/Views/Shared/LayoutPage.cshtml";
+}
+
+<h2>CheckOut</h2>
+
+
+    @{
+        <table>
+            <tr>
+                <td></td>
+                <td>Chào @Model.Name chúng tôi sẽ giao hàng tới @Model.Address  trong thời gian sớm nhất lo mà chuẩn bị @String.Format("{0:0,0 VNĐ}", ViewBag.TotalPrice) đi nghen cưng</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    }
+

@@ -1,0 +1,61 @@
+﻿@model PagedList.IPagedList<webmvcMobile.MobileServiceReference.Product>
+           
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/LayoutPage.cshtml";
+}
+@using PagedList;
+@using PagedList.Mvc;
+<script type="text/javascript">
+    jQuery(function ($) {
+        $('.add-to-cart').click(function () {
+            var cart = $('.shopping_bg');
+            var imgtofly = $(this).parents('li.x').find('a.product-image img').eq(0);
+            // var imgtofly = $(this).parents('thumbnail').find('a.product-image img').eq(0);
+            if (imgtofly) {
+                var imgclone = imgtofly.clone()
+                    .offset({ top: imgtofly.offset().top, left: imgtofly.offset().left })
+                    .css({ 'opacity': '0.8', 'position': 'absolute', 'height': '150 px', 'width': '400 px', 'z-index': '1000' })
+                    .appendTo($('body')).animate({
+                        'top': cart.offset().top + 25,
+                        'left': cart.offset().left + 42,
+                        'width': 40,
+                        'height': 20
+                    });
+                //imgclone.animate({ 'width': 40, 'height': 20});
+            }
+            return false;
+        });
+    });
+</script>
+
+<div class="row">
+    <div class="col-md-10">
+        <div class="row">
+            @{
+                foreach (var pro in Model)
+                {
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="@pro.ImageUrl" alt=""> 
+                            <div class="caption">
+                                <h4 class="pull-right">@pro.UnitPrice Đ</h4>
+                                <h4>
+                                    <a href="@Url.Action("Product_Detail", new {id = @pro.ID })">@pro.ProductName</a>
+                                </h4>
+                                <div class="ratings">
+                                    <p class="pull-right">15 reviews</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+        <div>
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }), PagedListRenderOptions.OnlyShowFivePagesAtATime)
+        </div>
+    </div>
+</div>
+

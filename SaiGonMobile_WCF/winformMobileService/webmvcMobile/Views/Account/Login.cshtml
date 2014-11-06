@@ -1,0 +1,12 @@
+﻿@model webmvcMobile.MobileServiceReference.Account
+@{
+    if (@Model != null)
+    {
+        Session["User"] = @Model.ID;
+        ViewBag.IsLogin = "True";
+    }
+    else
+    {
+        ViewBag.IsLogin = "False";
+    }
+}

@@ -1,0 +1,28 @@
+﻿@model IEnumerable<webmvcMobile.MobileServiceReference.Category>
+
+@{
+    ViewBag.Title = "Category";
+}
+@{
+    var s = Model.Count();
+    int i = 0;
+    }
+<table style="width:100%" border="0">
+    @{ foreach (var cat in Model )
+     {
+        <tr class="metro-box blue-gradient normal" style="height:49px; width:100px">
+            <th class="metro-box-icon">
+                @*<i class="icon-facebook"></i>*@
+                <a href="@Url.Action("Product_Category","Home", new {cat = @cat.ID})">
+                    <h5 class="metro-box-title">@cat.CategoryName</h5>
+                </a>
+
+            </th>
+        </tr>
+         i++;
+         if (i == (s / 2))
+         {break;}
+     }
+    }
+</table>
+

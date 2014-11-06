@@ -1,0 +1,8 @@
+E:\UNIVERSITY\HK1-5\Dich Vu Web\sample_demo\MobileStoreService\MobileStoreService\bin\Debug\MobileStoreService.dll.config
+E:\UNIVERSITY\HK1-5\Dich Vu Web\sample_demo\MobileStoreService\MobileStoreService\bin\Debug\MobileStoreService.dll
+E:\UNIVERSITY\HK1-5\Dich Vu Web\sample_demo\MobileStoreService\MobileStoreService\bin\Debug\MobileStoreService.pdb
+E:\UNIVERSITY\HK1-5\Dich Vu Web\sample_demo\MobileStoreService\MobileStoreService\bin\Debug\EntityFramework.dll
+E:\UNIVERSITY\HK1-5\Dich Vu Web\sample_demo\MobileStoreService\MobileStoreService\bin\Debug\EntityFramework.xml
+E:\UNIVERSITY\HK1-5\Dich Vu Web\sample_demo\MobileStoreService\MobileStoreService\obj\Debug\MobileStoreService.dll
+E:\UNIVERSITY\HK1-5\Dich Vu Web\sample_demo\MobileStoreService\MobileStoreService\obj\Debug\MobileStoreService.pdb
+E:\UNIVERSITY\HK1-5\Dich Vu Web\sample_demo\MobileStoreService\MobileStoreService\obj\Debug\MobileStoreService.csprojResolveAssemblyReference.cache
